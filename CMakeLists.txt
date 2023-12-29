@@ -9,6 +9,11 @@ project(
   HOMEPAGE_URL "https://github.com/ConorWilliams/libfork"
   LANGUAGES CXX
 )
+set(CMAKE_EXPORT_COMPILE_COMMANDS "1")
+
+set(CMAKE_MODULE_PATH
+    ${libfork_SOURCE_DIR}/cmake
+    ${CMAKE_MODULE_PATH})
 
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)

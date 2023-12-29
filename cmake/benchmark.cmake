@@ -25,5 +25,7 @@ else()
   message(WARNING "Intel TBB not found; TBB benchmarks will not be built.")
 endif()
 
+add_subdirectory(benchmark/tmc)
+
 # ---- End-of-file commands ----
 add_folders(Benchamark)

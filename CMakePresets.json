@@ -196,6 +196,21 @@
         "BUILD_BENCHMARKS": "ON",
         "CMAKE_CXX_FLAGS": "-Wno-assume -flto=auto -march=native"
       }
+    },
+    {
+      "name": "benchmark-nix-debug",
+      "binaryDir": "${sourceDir}/build/bench",
+      "generator": "Unix Makefiles",
+      "inherits": [
+        "dev-mode",
+        "ci-std"
+      ],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BUILD_TESTING": "OFF",
+        "BUILD_BENCHMARKS": "ON",
+        "CMAKE_CXX_FLAGS": "-Wno-assume -flto=auto -march=native"
+      }
     }
   ]
 }
