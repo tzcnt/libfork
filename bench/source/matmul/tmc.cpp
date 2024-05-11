@@ -40,9 +40,9 @@ auto matmul(mat A, mat B, mat R, unsigned n, unsigned s, auto add) -> task<void>
     auto c = spawn(matmul(A + o10, B + o00, R + o10, m, s, add)).run_early();
     /* */ co_await matmul(A + o10, B + o01, R + o11, m, s, add);
 
-    co_await a;
-    co_await b;
-    co_await c;
+    co_await std::move(a);
+    co_await std::move(b);
+    co_await std::move(c);
   }
 
   {
@@ -51,9 +51,9 @@ auto matmul(mat A, mat B, mat R, unsigned n, unsigned s, auto add) -> task<void>
     auto c = spawn(matmul(A + o11, B + o10, R + o10, m, s, std::true_type{})).run_early();
     /* */ co_await matmul(A + o11, B + o11, R + o11, m, s, std::true_type{});
 
-    co_await a;
-    co_await b;
-    co_await c;
+    co_await std::move(a);
+    co_await std::move(b);
+    co_await std::move(c);
   }
 };
 
@@ -83,10 +83,5 @@ void matmul_tmc(benchmark::State &state) {
 }
 
 } // namespace
-
-using namespace lf;
-
-// BENCHMARK(matmul_libfork<unit_pool, numa_strategy::seq>)->DenseRange(1, 1)->UseRealTime();
-// BENCHMARK(matmul_libfork<debug_pool, numa_strategy::seq>)->DenseRange(1, 1)->UseRealTime();
 
 BENCHMARK(matmul_tmc)->Apply(targs)->UseRealTime();

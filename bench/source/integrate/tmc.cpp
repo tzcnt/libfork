@@ -25,7 +25,7 @@ auto integrate(double x1, double y1, double x2, double y2, double area) -> task<
 
   auto xt = spawn(integrate(x1, y1, x0, y0, area_x1x0)).run_early();
   auto y = co_await integrate(x0, y0, x2, y2, area_x0x2);
-  auto x = co_await xt;
+  auto x = co_await std::move(xt);
 
   co_return x + y;
 };

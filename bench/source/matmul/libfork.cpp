@@ -90,5 +90,5 @@ using namespace lf;
 BENCHMARK(matmul_libfork<lazy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
 BENCHMARK(matmul_libfork<lazy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
 
-BENCHMARK(matmul_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
-BENCHMARK(matmul_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
+// BENCHMARK(matmul_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
+// BENCHMARK(matmul_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();

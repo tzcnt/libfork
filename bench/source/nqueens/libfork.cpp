@@ -76,6 +76,6 @@ void nqueens_libfork(benchmark::State &state) {
 using namespace lf;
 
 BENCHMARK(nqueens_libfork<lazy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
-BENCHMARK(nqueens_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
+// BENCHMARK(nqueens_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
 BENCHMARK(nqueens_libfork<lazy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
-BENCHMARK(nqueens_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
+// BENCHMARK(nqueens_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();

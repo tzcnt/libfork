@@ -5,7 +5,9 @@
 
 #include <benchmark/benchmark.h>
 
-inline auto num_threads() noexcept -> int { return static_cast<int>(std::thread::hardware_concurrency()); }
+inline auto num_threads() noexcept -> int {
+  return static_cast<int>(std::thread::hardware_concurrency() / 2);
+}
 
 inline void targs(benchmark::internal::Benchmark *bench) {
 

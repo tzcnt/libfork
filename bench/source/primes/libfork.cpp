@@ -45,5 +45,5 @@ void primes_libfork(benchmark::State &state) {
 BENCHMARK(primes_libfork<lazy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
 BENCHMARK(primes_libfork<lazy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
 
-BENCHMARK(primes_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
-BENCHMARK(primes_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
+// BENCHMARK(primes_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
+// BENCHMARK(primes_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();

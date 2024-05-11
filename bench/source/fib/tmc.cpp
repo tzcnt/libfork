@@ -17,7 +17,7 @@ auto fib(int n) -> task<int> {
   /* Spawn one, then serially execute the other, then await the first */
   auto xt = spawn(fib(n - 1)).run_early();
   auto y = co_await fib(n - 2);
-  auto x = co_await xt;
+  auto x = co_await std::move(xt);
   co_return x + y;
 }
 

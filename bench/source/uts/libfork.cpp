@@ -190,10 +190,10 @@ using namespace lf;
 
 MAKE_UTS_FOR(uts_libfork_alloc_lazy_seq);
 MAKE_UTS_FOR(uts_libfork_alloc_lazy_fan);
-MAKE_UTS_FOR(uts_libfork_alloc_busy_seq);
-MAKE_UTS_FOR(uts_libfork_alloc_busy_fan);
+// MAKE_UTS_FOR(uts_libfork_alloc_busy_seq);
+// MAKE_UTS_FOR(uts_libfork_alloc_busy_fan);
 
 MAKE_UTS_FOR(uts_libfork_coalloc_lazy_seq);
 MAKE_UTS_FOR(uts_libfork_coalloc_lazy_fan);
-MAKE_UTS_FOR(uts_libfork_coalloc_busy_seq);
-MAKE_UTS_FOR(uts_libfork_coalloc_busy_fan);
+// MAKE_UTS_FOR(uts_libfork_coalloc_busy_seq);
+// MAKE_UTS_FOR(uts_libfork_coalloc_busy_fan);

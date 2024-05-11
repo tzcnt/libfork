@@ -186,8 +186,8 @@
       ]
     },
     {
-      "name": "benchmark-nix",
-      "binaryDir": "${sourceDir}/build/bench",
+      "name": "benchmark-clang-release",
+      "binaryDir": "${sourceDir}/build",
       "generator": "Ninja",
       "inherits": [
         "dev-mode",
@@ -197,7 +197,28 @@
         "CMAKE_BUILD_TYPE": "Release",
         "BUILD_TESTING": "OFF",
         "BUILD_BENCHMARKS": "ON",
-        "CMAKE_CXX_FLAGS": "-flto=auto -march=native"
+        "CMAKE_CXX_FLAGS": "-flto=auto -march=native",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "benchmark-clang-debug",
+      "binaryDir": "${sourceDir}/build",
+      "generator": "Ninja",
+      "inherits": [
+        "dev-mode",
+        "ci-std"
+      ],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BUILD_TESTING": "OFF",
+        "BUILD_BENCHMARKS": "ON",
+        "CMAKE_CXX_FLAGS": "",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       }
     }
   ]

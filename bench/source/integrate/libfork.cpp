@@ -67,6 +67,6 @@ void integrate_libfork(benchmark::State &state) {
 using namespace lf;
 
 BENCHMARK(integrate_libfork<lazy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
-BENCHMARK(integrate_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
+// BENCHMARK(integrate_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
 BENCHMARK(integrate_libfork<lazy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
-BENCHMARK(integrate_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
+// BENCHMARK(integrate_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();

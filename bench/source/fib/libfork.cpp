@@ -60,5 +60,5 @@ using namespace lf;
 BENCHMARK(fib_libfork<lazy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
 BENCHMARK(fib_libfork<lazy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
 
-BENCHMARK(fib_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
-BENCHMARK(fib_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
+// BENCHMARK(fib_libfork<busy_pool, numa_strategy::seq>)->Apply(targs)->UseRealTime();
+// BENCHMARK(fib_libfork<busy_pool, numa_strategy::fan>)->Apply(targs)->UseRealTime();
